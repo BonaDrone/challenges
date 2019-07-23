@@ -12,5 +12,8 @@ def main():
         with MotionCommander(scf) as mq90:
             print("Take off done!")
             mq90.up(1)
+            time.sleep(10)
+            mq90.down(1)
+            mq90.land()
 
 main()

@@ -7,10 +7,11 @@ URI = 'radio://0/80/2M'
 
 def main():
     cflib.crtp.init_drivers(enable_debug_driver=False)
+    
+	numRepeticions = int(input("Quants cops vols repetir la ruta?"))
+    ruta = input("Quina ruta vols realitzar?")
 
-    with SyncCrazyflie(URI) as scf:
-        with MotionCommander(scf) as mq90:
-            print("Take off done!")
-            mq90.up(1)
+    print(numRepeticions)
+    print(ruta)
 
 main()

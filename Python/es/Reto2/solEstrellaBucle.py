@@ -10,7 +10,10 @@ def main():
 
     with SyncCrazyflie(URI) as scf:
         with MotionCommander(scf) as mq90:
-            print("Take off done!")
-            mq90.up(1)
+            for i in range(5):
+                mq90.forward(0.5)
+                mq90.turn_right(144)
+
+            mq90.land()
 
 main()
